@@ -1,0 +1,12 @@
+{
+    "require": {
+        "nyholm/psr7": "^1.5",
+        "nyholm/psr7-server": "^1.0",
+        "larapack/dd": "^1.1",
+        "psr/http-server-handler": "^1.0",
+        "psr/http-server-middleware": "^1.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    }
+}
