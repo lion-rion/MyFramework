@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aeaba9f9d6ddedba0137a371e58d2860",
+    "content-hash": "bf67056af1567d949dbace402cd8a51d",
     "packages": [
         {
             "name": "larapack/dd",
@@ -464,6 +464,67 @@
                 "source": "https://github.com/php-fig/http-server-middleware/tree/master"
             },
             "time": "2018-10-30T17:12:04+00:00"
+        },
+        {
+            "name": "relay/relay",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/relayphp/Relay.Relay.git",
+                "reference": "924fdf9473492d6d221bd7760a8f201f8b35d96c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/relayphp/Relay.Relay/zipball/924fdf9473492d6d221bd7760a8f201f8b35d96c",
+                "reference": "924fdf9473492d6d221bd7760a8f201f8b35d96c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "psr/http-message": "~1.0",
+                "psr/http-server-handler": "~1.0",
+                "psr/http-server-middleware": "^1.0"
+            },
+            "provide": {
+                "psr/http-server-handler-implementation": "1.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9.0",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "laminas/laminas-diactoros": "~2.2",
+                "phpstan/phpstan": "^0.12.14",
+                "phpunit/phpunit": "~7.0 || ~9.5",
+                "roave/security-advisories": "dev-master",
+                "vimeo/psalm": "^4.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Relay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Relay.Relay Contributors",
+                    "homepage": "https://github.com/relayphp/Relay.Relay/contributors"
+                }
+            ],
+            "description": "A PSR-15 server request handler.",
+            "homepage": "https://github.com/relayphp/Relay.Relay",
+            "keywords": [
+                "middleware",
+                "psr-15",
+                "psr-7"
+            ],
+            "support": {
+                "issues": "https://github.com/relayphp/Relay.Relay/issues",
+                "source": "https://github.com/relayphp/Relay.Relay/tree/2.1.2"
+            },
+            "time": "2021-05-23T05:42:52+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",

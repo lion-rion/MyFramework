@@ -1,5 +1,7 @@
 <?php
 
+namespace Http\Middleware;
+
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -9,7 +11,7 @@ class RouteMiddleware implements MiddlewareInterface
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $request = $request->withHeader(Foo::class, new Foo());
+        $request = $request->withAttribute('hi', 'hi');
 
         return $handler->handle($request);
     }
