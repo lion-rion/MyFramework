@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 require_once '../Http/Middleware/RouteMiddleware.php';
@@ -13,7 +14,6 @@ use Http\Middleware\RouteMiddleware;
 $psr17Factory = new Psr17Factory();
 $creator = new ServerRequestCreator($psr17Factory, $psr17Factory, $psr17Factory, $psr17Factory);
 $serverRequest = $creator->fromGlobals();
-$x = new RouteMiddleware;
 
 $queue = [
     new RouteMiddleware,
