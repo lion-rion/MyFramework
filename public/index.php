@@ -1,23 +1,22 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
-require_once '../Http/Middleware/RouteMiddleware.php';
-require_once '../Http/Middleware/FilterMiddleware.php';
 
-use Http\Middleware\FilterMiddleware;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7Server\ServerRequestCreator;
 use Relay\Relay;
-use Http\Middleware\RouteMiddleware;
 
 $psr17Factory = new Psr17Factory();
 $creator = new ServerRequestCreator($psr17Factory, $psr17Factory, $psr17Factory, $psr17Factory);
 $serverRequest = $creator->fromGlobals();
 
+$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+    $r->addRoute('GET', '/users', "Http\Middleware\FilterMiddleware");
+});
+
 $queue = [
-    new RouteMiddleware,
-    new FilterMiddleware,
+    new Http\Middleware\RouteMiddleware($dispatcher),
+    new Http\Middleware\Dispatcher(),
 ];
 
 $relay = new Relay($queue);
